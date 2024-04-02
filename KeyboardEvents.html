@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Project2 Keyboard Events </title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+           body{
+            text-align: center;
+            color: aqua;
+            background-color: black;
+            font-size: large;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            letter-spacing: 2px;
+
+           }
+           #myInput{
+            width: 250px;
+            height: 30px;
+            border-radius: 20px;
+            padding-left: 2%;
+            color: white;
+            background-color: black;
+            border: 10px solid yellow;
+            font-size: large;
+            letter-spacing: 2px;
+            margin-top: 10%;
+           }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are Eusing an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <div>
+            <input type="text" id="myInput" placeholder="Type Something...">
+            <div class="output">
+                <p class="keyPressed">key pressed :</p>
+                <p class="keyCode">key code :</p>
+                <p class="charCodeAt">char codeAt :</p>
+                <p class="EventType">Event type :</p>
+
+            </div>
+        </div>
+
+        <script>
+        const myInputText = document.getElementById('myInput');
+
+            const handleKeyPress = (e)=>{
+                console.log(e);
+                document.querySelector('.keyPressed').textContent = `key pressed : ${e.key}`;
+                document.querySelector('.keyCode').textContent = `key Code : ${e.code}`;
+                document.querySelector('.charCodeAt').textContent = `Char codeAt : ${e.key.charCodeAt(0)}`;
+                document.querySelector('.EventType').textContent = `EventType : ${e.type}`;
+
+            }
+
+
+        myInputText.addEventListener('keydown', handleKeyPress);
+        </script>
+    </body>
+</html>
